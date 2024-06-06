@@ -2,7 +2,6 @@
 
 # Instruksi Menjalankan Program
 
-Instruksi di bawah ini akan membantu Anda dalam menjalankan program ini di lingkungan pengembangan Anda sendiri.
 
 ```bash
 # Masuk ke folder proyek
