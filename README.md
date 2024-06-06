@@ -21,3 +21,6 @@ npx sequelize-cli db:seed:all
 
 # Jalankan program
 npm run start:dev
+
+# Link reference
+[Link text](https://roompanda.notion.site/Technical-test-3fd0234f9c294a9ba9c0f17fd3e05144?pvs=4)
