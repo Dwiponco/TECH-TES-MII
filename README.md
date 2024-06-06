@@ -19,3 +19,6 @@ npx sequelize-cli db:migrate
 
 # Jalankan seed
 npx sequelize-cli db:seed:all
+
+# Jalankan program
+npm run start:dev
