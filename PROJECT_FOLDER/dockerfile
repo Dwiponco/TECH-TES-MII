@@ -1,0 +1,17 @@
+# Gunakan node image resmi sebagai base image
+FROM node:latest
+
+# Set working directory di dalam container
+WORKDIR /app
+
+# Copy package.json dan package-lock.json ke working directory
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy kode aplikasi ke dalam container
+COPY . .
+
+# Tambahkan penundaan untuk menunggu layanan database selesai diinisialisasi
+CMD sh -c "until nc -z postgres 5432; do sleep 1; done; npm install; npx sequelize-cli db:migrate; npx sequelize-cli db:seed:all; npm run start:dev"

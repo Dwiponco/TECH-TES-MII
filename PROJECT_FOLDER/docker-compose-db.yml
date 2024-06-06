@@ -5,6 +5,7 @@ services:
     container_name: postgres_container_mii
     image: postgres
     environment:
+      POSTGRES_DB: data_kepegawaian
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
       

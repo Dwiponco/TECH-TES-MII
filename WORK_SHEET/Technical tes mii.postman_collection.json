@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "e5cef159-b766-4cde-8709-93ba86dce731",
+		"name": "Technical tes mii",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24528444"
+	},
+	"item": [
+		{
+			"name": "getAllEmployees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/employee",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOneEmployee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/employee/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createEmployee",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const moment = require('moment');",
+							"pm.globals.set(\"today\", moment().format(\"YYYY/MM.DD\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nik\": \"10001\",\n    \"name\": \"Budi satu\",\n    \"is_active\": true,\n    \"start_date\": \"2022-12-12\",\n    \"end_date\": \"2029-12-12\",\n    \"created_by\": \"admin\",\n    \"updated_by\": \"admin\",\n    \"profile\": {\n        \"place_of_birth\": \"Jakarta\",\n        \"date_of_birth\": \"1990-01-01\",\n        \"gender\": \"laki-laki\",\n        \"is_married\": true,\n        \"prof_pict\": \"path/to/picture.jpg\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\"\n    },\n    \"families\": [\n        {\n            \"name\": \"Siti Badriyah\",\n            \"identifier\": \"12345678901234567\",\n            \"job\": \"Teacher\",\n            \"place_of_birth\": \"Bandung\",\n            \"date_of_birth\": \"1995-05-05\",\n            \"religion\": \"islam\",\n            \"is_life\": true,\n            \"is_divorced\": false,\n            \"relation_status\": \"Istri\",\n            \"created_by\": \"admin\",\n            \"updated_by\": \"admin\"\n        }\n    ],\n    \"educations\": [\n        {\n            \"name\": \"Universitas Indonesia\",\n            \"level\": \"strata 1\",\n            \"description\": \"S1 Teknik Informatika\",\n            \"created_by\": \"admin\",\n            \"updated_by\": \"admin\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/employee",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmployee",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const moment = require('moment');",
+							"pm.globals.set(\"today\", moment().format(\"YYYY/MM.DD\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"nik\": \"10001\",\n    \"name\": \"Budi satu\",\n    \"is_active\": true,\n    \"start_date\": \"2022-12-12T00:00:00.000Z\",\n    \"end_date\": \"2029-12-12T00:00:00.000Z\",\n    \"created_by\": \"admin\",\n    \"updated_by\": \"admin\",\n    \"created_at\": \"2024-06-06T15:50:01.257Z\",\n    \"updated_at\": \"2024-06-06T15:50:01.259Z\",\n    \"profile\": {\n        \"id\": 3,\n        \"employee_id\": 3,\n        \"place_of_birth\": \"Jakarta\",\n        \"date_of_birth\": \"1990-01-01T00:00:00.000Z\",\n        \"gender\": \"laki-laki\",\n        \"is_married\": true,\n        \"prof_pict\": \"path/to/picture.jpg\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\",\n        \"updated_at\": \"2024-06-06T15:50:01.302Z\",\n        \"created_at\": \"2024-06-06T15:50:01.302Z\"\n    },\n    \"families\": [\n        {\n            \"id\": 4,\n            \"employee_id\": 3,\n            \"name\": \"Siti Badriyah\",\n            \"identifier\": \"12345678901234567\",\n            \"job\": \"Teacher\",\n            \"place_of_birth\": \"Bandung\",\n            \"date_of_birth\": \"1995-05-05T00:00:00.000Z\",\n            \"religion\": \"islam\",\n            \"is_life\": true,\n            \"is_divorced\": false,\n            \"relation_status\": \"Istri\",\n            \"created_by\": \"admin\",\n            \"updated_by\": \"admin\",\n            \"created_at\": \"2024-06-06T15:50:01.309Z\",\n            \"updated_at\": \"2024-06-06T15:50:01.309Z\"\n        }\n    ],\n    \"educations\": [\n        {\n            \"id\": 3,\n            \"employee_id\": 3,\n            \"name\": \"Universitas Indonesia\",\n            \"level\": \"strata 1\",\n            \"description\": \"S1 Teknik Informatika\",\n            \"created_by\": \"admin\",\n            \"updated_by\": \"admin\",\n            \"created_at\": \"2024-06-06T15:50:01.313Z\",\n            \"updated_at\": \"2024-06-06T15:50:01.313Z\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/employee/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEmployee",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const moment = require('moment');",
+							"pm.globals.set(\"today\", moment().format(\"YYYY/MM.DD\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Budi Santoso\",\n  \"is_active\": false,\n  \"profile\": {\n    \"place_of_birth\": \"Surabaya\",\n    \"date_of_birth\": \"1990-01-01\",\n    \"gender\": \"laki-laki\",\n    \"is_married\": true,\n    \"prof_pict\": \"path/to/new_picture.jpg\",\n    \"updated_by\": \"admin\"\n  },\n  \"families\": [\n    {\n      \"name\": \"Siti\",\n      \"identifier\": \"123456789\",\n      \"job\": \"Teacher\",\n      \"place_of_birth\": \"Bandung\",\n      \"date_of_birth\": \"1995-05-05\",\n      \"religion\": \"islam\",\n      \"is_life\": true,\n      \"is_divorced\": false,\n      \"relation_status\": \"Istri\",\n      \"updated_by\": \"admin\"\n    }\n  ],\n  \"educations\": [\n    {\n      \"name\": \"Universitas Indonesia\",\n      \"level\": \"strata 1\",\n      \"description\": \"S1 Teknik Informatika\",\n      \"updated_by\": \"admin\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/employee/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEmployeeFamily",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const moment = require('moment');",
+							"pm.globals.set(\"today\", moment().format(\"YYYY/MM.DD\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Budi Santoso\",\n  \"is_active\": false,\n  \"profile\": {\n    \"place_of_birth\": \"Surabaya\",\n    \"date_of_birth\": \"1990-01-01\",\n    \"gender\": \"laki-laki\",\n    \"is_married\": true,\n    \"prof_pict\": \"path/to/new_picture.jpg\",\n    \"updated_by\": \"admin\"\n  },\n  \"families\": [\n    {\n      \"name\": \"Siti\",\n      \"identifier\": \"123456789\",\n      \"job\": \"Teacher\",\n      \"place_of_birth\": \"Bandung\",\n      \"date_of_birth\": \"1995-05-05\",\n      \"religion\": \"islam\",\n      \"is_life\": true,\n      \"is_divorced\": false,\n      \"relation_status\": \"Istri\",\n      \"updated_by\": \"admin\"\n    }\n  ],\n  \"educations\": [\n    {\n      \"name\": \"Universitas Indonesia\",\n      \"level\": \"strata 1\",\n      \"description\": \"S1 Teknik Informatika\",\n      \"updated_by\": \"admin\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/employee/employee-family/6",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"employee-family",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEducation",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const moment = require('moment');",
+							"pm.globals.set(\"today\", moment().format(\"YYYY/MM.DD\"));"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Budi Santoso\",\n  \"is_active\": false,\n  \"profile\": {\n    \"place_of_birth\": \"Surabaya\",\n    \"date_of_birth\": \"1990-01-01\",\n    \"gender\": \"laki-laki\",\n    \"is_married\": true,\n    \"prof_pict\": \"path/to/new_picture.jpg\",\n    \"updated_by\": \"admin\"\n  },\n  \"families\": [\n    {\n      \"name\": \"Siti\",\n      \"identifier\": \"123456789\",\n      \"job\": \"Teacher\",\n      \"place_of_birth\": \"Bandung\",\n      \"date_of_birth\": \"1995-05-05\",\n      \"religion\": \"islam\",\n      \"is_life\": true,\n      \"is_divorced\": false,\n      \"relation_status\": \"Istri\",\n      \"updated_by\": \"admin\"\n    }\n  ],\n  \"educations\": [\n    {\n      \"name\": \"Universitas Indonesia\",\n      \"level\": \"strata 1\",\n      \"description\": \"S1 Teknik Informatika\",\n      \"updated_by\": \"admin\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/employee/education/41",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"education",
+						"41"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getReport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/report",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"report"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
